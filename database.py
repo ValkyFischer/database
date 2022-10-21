@@ -28,12 +28,12 @@ class Database:
 			link.execute("SELECT * FROM DbInfo")
 			data = link.fetchone()
 
-			self.log.Info(f"Connection established: {database} v{data[0]}")
+			self.log.info(f"Connection established: {database} v{data[0]}")
 
 			conn.close()
 			return True
 		except:
-			self.log.Error(f"'{database}' cannot be reached!")
+			self.log.error(f"'{database}' cannot be reached!")
 			return False
 
 
@@ -58,12 +58,12 @@ class Database:
 			link.execute("SELECT VERSION()")
 			data = link.fetchone()
 
-			self.log.Info(f"Connection established: {database} v{data['VERSION()']}")
+			self.log.info(f"Connection established: {database} v{data['VERSION()']}")
 
 			conn.close()
 			return True
 		except:
-			self.log.Error(f"'{database}' cannot be reached!")
+			self.log.error(f"'{database}' cannot be reached!")
 			return False
 
 
